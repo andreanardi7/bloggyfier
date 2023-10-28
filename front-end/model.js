@@ -28,11 +28,12 @@ function generateFile(){
 // writing of the snippet
 function writeFile(nome_file) {
     // i truncate the file name extension with slice(0, -3) 
-    var mysnippet = 
+    let id = nome_file.replace('.md',"")
+    var snippet = 
     '<div>'+
-        '<span id = ' + nome_file.slice(0, -3) + '>'
+        '<span id = ' + id + '>'+
     '</div>'+
     '<div>'+
-    '<script src="https://www.bloggyfier.com/index.js?id="' + nome_file.slice(0, -3) +
+        '<script src="https://www.bloggyfier.com/index.js?id="' + id + '>'+
     '</div>'
 }
