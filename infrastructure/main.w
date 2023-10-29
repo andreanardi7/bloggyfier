@@ -9,6 +9,7 @@ let website = new cloud.Website(path: "./front-end");
 let api = new cloud.Api();
 
 
+
 // Read the file with GET reqtest
 //  Create an endpoint for HTTP GET requests
 api.get("{fileName}", inflight (req: cloud.ApiRequest): cloud.ApiResponse => {
@@ -32,8 +33,29 @@ api.get("{fileName}", inflight (req: cloud.ApiRequest): cloud.ApiResponse => {
 
 
 
-// !!TODO Read the old file to push it back with new changes
+//  Create an endpoint for HTTP put requests
+api.put("{fileName}", inflight (req: cloud.ApiRequest): cloud.ApiResponse => { 
+  let fileName = req.vars.get("fileName");
+  let items = bucket.list();
 
-//  Create an endpoint for HTTP POST requests
-//api.post("/write-file/{fileName}", inflight (req: cloud.ApiRequest): cloud.ApiResponse => { 
-//});
+
+  //  If the bucket do not contain the file create a new one
+  if (!items.contains(fileName)) {
+
+    bucket.put(fileName,"Hello, world!");
+
+    return cloud.ApiResponse {     
+      status: 201,
+      body: "Written new File"
+    };
+  }
+
+  //file already exist
+  return cloud.ApiResponse {
+    status: 400,
+    body: "File already exist"
+  };
+
+  // !!TODO Read the old file to push it back with new changes
+  //  Otherwise change the existing one (TODO)
+});

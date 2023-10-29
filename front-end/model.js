@@ -1,4 +1,4 @@
-let nome_file;
+let fileName;
 
 // Generatore Nome del file
 function generateFile(){
@@ -20,15 +20,15 @@ function generateFile(){
   const randomAlphanumericString = generateRandomAlphanumericString(length);
 
   // Concat the generated code to the standard naming convention
-  nome_file.writeFile("blog_".concat(randomAlphanumericString,".md"), "", (err) => {
+  fileName.writeFile("blog_".concat(randomAlphanumericString,".md"), "", (err) => {
     if (err) throw err;
   });
 }
 
 // writing of the snippet
-function writeFile(nome_file) {
+function writeFile(fileName) {
     // i truncate the file name extension with slice(0, -3) 
-    let id = nome_file.replace('.md',"")
+    let id = fileName.replace('.md',"")
     var snippet = 
     '<div>'+
         '<span id = ' + id + '>'+
