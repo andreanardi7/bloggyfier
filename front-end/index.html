@@ -60,9 +60,23 @@
     <script>
         function createHTMLSnippet() {
             const text = document.getElementById('textArea').value;
-            // You can add your HTML snippet generation logic here.
-            // For now, let's just display the entered text in an alert.
-            alert('Entered Text:\n' + text);
+
+            //Generate File Name
+            let fileName = generateFileName();
+
+            //Write File
+            let write = writeFile(fileName, document.getElementById('textArea').value);
+
+            //Generate snippet
+            var snippet = 
+            '<div>'+
+                '<span id = ' + id + '>'+
+            '</div>'+
+            '<div>'+
+                '<script src="https://www.bloggyfier.com/index.js?id="' + id + '>'+
+            '</div>'
+
+            alert('Generated snippet:\n' + snippet);
         }
     </script>
 </body>
