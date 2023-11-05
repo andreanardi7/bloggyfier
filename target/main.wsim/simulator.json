@@ -87,15 +87,6 @@
       "attrs": {}
     },
     {
-      "type": "@winglang/sdk.cloud.Website",
-      "path": "root/Default/cloud.Website",
-      "props": {
-        "staticFilesPath": "c:\\Users\\volle\\Documents\\bloggyfier\\front-end\\index.html",
-        "fileRoutes": {}
-      },
-      "attrs": {}
-    },
-    {
       "type": "@winglang/sdk.cloud.Bucket",
       "path": "root/Default/cloud.Bucket",
       "props": {

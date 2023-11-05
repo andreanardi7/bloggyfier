@@ -78,7 +78,6 @@ class $Root extends $stdlib.std.Resource {
       }
     }
     const bucket = this.node.root.newAbstract("@winglang/sdk.cloud.Bucket",this, "cloud.Bucket");
-    const website = this.node.root.newAbstract("@winglang/sdk.cloud.Website",this, "cloud.Website", { path: "./front-end/index.html" });
     const api = this.node.root.newAbstract("@winglang/sdk.cloud.Api",this, "cloud.Api");
     (api.get("/files/{fileName}", new $Closure1(this, "$Closure1")));
     (api.put("/files/{fileName}", new $Closure2(this, "$Closure2")));

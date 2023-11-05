@@ -1,6 +1,3 @@
-import EditorJS from '@editorjs/editorjs'
-
-
 // Generatore Nome del file
 function generateName() {
     // Generate randdom string

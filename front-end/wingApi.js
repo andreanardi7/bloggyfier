@@ -1,4 +1,5 @@
-// WING
+// Call WING APIs
+
 // CALL WING API put to write a new file on the bucket
 function writeFile(fileName, fileContent) {
     var myHeaders = new Headers();
@@ -15,11 +16,13 @@ function writeFile(fileName, fileContent) {
         redirect: 'follow'
     };
     // Manually update port every time (changes at every save)
-    fetch("http://127.0.0.1:52367/files/" + fileName, requestOptions)
+    fetch("http://127.0.0.1:54099/files/" + fileName, requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
 }
+
+
 
 // CALL WING API get to read a file on the bucket
 function readFile(fileName) {
@@ -27,8 +30,8 @@ function readFile(fileName) {
         method: 'GET',
         redirect: 'follow'
     };
-
-    fetch("http://127.0.0.1:52367/files/" + fileName, requestOptions)
+    // Manually update port every time (changes at every save)
+    fetch("http://127.0.0.1:54099/files/" + fileName, requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));

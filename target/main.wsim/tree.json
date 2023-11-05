@@ -33,18 +33,6 @@
               "description": "A cloud object store"
             }
           },
-          "cloud.Website": {
-            "id": "cloud.Website",
-            "path": "root/Default/cloud.Website",
-            "constructInfo": {
-              "fqn": "@winglang/sdk.cloud.Website",
-              "version": "0.0.0"
-            },
-            "display": {
-              "title": "Website",
-              "description": "A static website"
-            }
-          },
           "cloud.Api": {
             "id": "cloud.Api",
             "path": "root/Default/cloud.Api",

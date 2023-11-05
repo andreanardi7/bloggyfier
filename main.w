@@ -5,8 +5,6 @@ bring fs;
 
 // We create a bucket with a file inside
 let bucket = new cloud.Bucket();
-// We create the website
-let website = new cloud.Website(path: "./front-end/index.html");
 // Here we have the Api Gateway
 let api = new cloud.Api();
 
@@ -54,8 +52,5 @@ api.put("/files/{fileName}", inflight (req: cloud.ApiRequest): cloud.ApiResponse
       status: 201,
       body: "Written new File"
     };
-
-  // !!TODO Read the old file to push it back with new changes
-  //  Otherwise change the existing one (TODO)
 });
 
