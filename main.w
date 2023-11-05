@@ -14,7 +14,7 @@ let api = new cloud.Api();
 
 // Read the file with GET reqtest
 //  Create an endpoint for HTTP GET requests
-api.get("{fileName}", inflight (req: cloud.ApiRequest): cloud.ApiResponse => {
+api.get("/files/{fileName}", inflight (req: cloud.ApiRequest): cloud.ApiResponse => {
   let fileName = req.vars.get("fileName");
   let items = bucket.list();
 
@@ -29,35 +29,31 @@ api.get("{fileName}", inflight (req: cloud.ApiRequest): cloud.ApiResponse => {
   //  Otherwise we can safely read it
   return cloud.ApiResponse {
     status: 200,
-    body: bucket.get(fileName)
+    body: 
+    bucket.get(fileName)
   };
 });
 
 
 
 //  Create an endpoint for HTTP put requests
-api.put("{fileName}", inflight (req: cloud.ApiRequest): cloud.ApiResponse => { 
+api.put("/files/{fileName}", inflight (req: cloud.ApiRequest): cloud.ApiResponse => { 
   let fileName = req.vars.get("fileName");
-  let text = req.vars.get("text");
+  let body = req.body;
+
+  // Parse body type str? and need str (use ?? to define the fallback)
+  let parsedBody = Json.parse(body??"{}") ;
+  let content = parsedBody.get("content").asStr();
+  let plainText = parsedBody.get("text").asStr();
   let items = bucket.list();
 
-
-  //  If the bucket do not contain the file create a new one
-  if (!items.contains(fileName)) {
-
-    bucket.put(fileName,text);
+    bucket.put(fileName+ ".html",content);
+    bucket.put(fileName+ ".txt",plainText);
 
     return cloud.ApiResponse {     
       status: 201,
       body: "Written new File"
     };
-  }
-
-  //file already exist
-  return cloud.ApiResponse {
-    status: 400,
-    body: "File already exist"
-  };
 
   // !!TODO Read the old file to push it back with new changes
   //  Otherwise change the existing one (TODO)

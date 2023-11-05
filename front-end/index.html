@@ -3,12 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <h1>Bloggyfier</h1>
+    <h1>Bloggybase</h1>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="light-mode.css" id="light-mode-styles">
     <link rel="stylesheet" href="dark-mode.css" id="dark-mode-styles" disabled>
     <!-- Dark mode styles (disabled by default) -->
 </head>
+<script src="index.js"></script>
 
 <body>
     <div class="ce-example__content _ce-example__content--small">
@@ -16,8 +17,8 @@
         <button onclick="toggleDarkMode()">Change Mode</button>
 
         <div class="button-container" id="generateButton">
-            <button onclick="generateSnippet(document.getElementById('text').value)">
-                Create HTML snippet
+            <button onclick="onCreateSnippetClick(editor)">
+                Create snippet
             </button>
         </div>
         <div id="editorjs"></div>
@@ -26,6 +27,21 @@
         <pre class="ce-example__output-content" id="output"></pre>
     </div>
     </div>
+
+
+    <!-- Credits section -->
+    <div class="credits">
+        <p>Created by:</p>
+        <p><a href="https://github.com/andreanardi7">Andrea Nardi</a></p>
+        <p><a href="https://www.linkedin.com/in/andrea-nardi-39418b1ab/">LinkedIn Profile</a></p>
+        <p><a href="https://github.com/fl0wo">Florian Sabani</a></p>
+        <p><a href="https://www.linkedin.com/in/florian-sabani/">LinkedIn Profile</a></p>
+        <p>Library Used:</p>
+        <p><a href="https://github.com/codex-team/editor.js">Editor.js</a> from Codex-Team</p>
+        <p><a href="https://github.com/miadabdi/editorjs-parser">Editorjs parser</a> from miadabdi</p>
+        <p><a href="https://www.wing.cloud/">Powered by WingCloud</a></p>
+    </div>
+
 
     <!-- Load Tools -->
     <!--
@@ -53,6 +69,9 @@
 
     <!-- Load Editor.js's Core -->
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+
+    <!-- Load Editor.js's Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/editorjs-parser@1/build/Parser.browser.min.js"></script>
 
     <!-- Initialization -->
     <script>

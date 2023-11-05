@@ -1,0 +1,224 @@
+{
+  "types": {
+    "@winglang/sdk.cloud.Api": {
+      "className": "Api",
+      "sourcePath": "C:\\Users\\volle\\AppData\\Roaming\\npm\\node_modules\\winglang\\node_modules\\@winglang\\sdk\\lib\\target-sim\\api.inflight.js"
+    },
+    "@winglang/sdk.cloud.Bucket": {
+      "className": "Bucket",
+      "sourcePath": "C:\\Users\\volle\\AppData\\Roaming\\npm\\node_modules\\winglang\\node_modules\\@winglang\\sdk\\lib\\target-sim\\bucket.inflight.js"
+    },
+    "@winglang/sdk.cloud.Counter": {
+      "className": "Counter",
+      "sourcePath": "C:\\Users\\volle\\AppData\\Roaming\\npm\\node_modules\\winglang\\node_modules\\@winglang\\sdk\\lib\\target-sim\\counter.inflight.js"
+    },
+    "@winglang/sdk.cloud.Domain": {
+      "className": "Domain",
+      "sourcePath": "C:\\Users\\volle\\AppData\\Roaming\\npm\\node_modules\\winglang\\node_modules\\@winglang\\sdk\\lib\\target-sim\\domain.inflight.js"
+    },
+    "@winglang/sdk.ex.DynamodbTable": {
+      "className": "DynamodbTable",
+      "sourcePath": "C:\\Users\\volle\\AppData\\Roaming\\npm\\node_modules\\winglang\\node_modules\\@winglang\\sdk\\lib\\target-sim\\dynamodb-table.inflight.js"
+    },
+    "@winglang/sdk.sim.EventMapping": {
+      "className": "EventMapping",
+      "sourcePath": "C:\\Users\\volle\\AppData\\Roaming\\npm\\node_modules\\winglang\\node_modules\\@winglang\\sdk\\lib\\target-sim\\event-mapping.inflight.js"
+    },
+    "@winglang/sdk.cloud.Function": {
+      "className": "Function",
+      "sourcePath": "C:\\Users\\volle\\AppData\\Roaming\\npm\\node_modules\\winglang\\node_modules\\@winglang\\sdk\\lib\\target-sim\\function.inflight.js"
+    },
+    "@winglang/sdk.cloud.OnDeploy": {
+      "className": "OnDeploy",
+      "sourcePath": "C:\\Users\\volle\\AppData\\Roaming\\npm\\node_modules\\winglang\\node_modules\\@winglang\\sdk\\lib\\target-sim\\on-deploy.inflight.js"
+    },
+    "@winglang/sdk.cloud.Queue": {
+      "className": "Queue",
+      "sourcePath": "C:\\Users\\volle\\AppData\\Roaming\\npm\\node_modules\\winglang\\node_modules\\@winglang\\sdk\\lib\\target-sim\\queue.inflight.js"
+    },
+    "@winglang/sdk.ex.ReactApp": {
+      "className": "ReactApp",
+      "sourcePath": "C:\\Users\\volle\\AppData\\Roaming\\npm\\node_modules\\winglang\\node_modules\\@winglang\\sdk\\lib\\target-sim\\react-app.inflight.js"
+    },
+    "@winglang/sdk.ex.Redis": {
+      "className": "Redis",
+      "sourcePath": "C:\\Users\\volle\\AppData\\Roaming\\npm\\node_modules\\winglang\\node_modules\\@winglang\\sdk\\lib\\target-sim\\redis.inflight.js"
+    },
+    "@winglang/sdk.cloud.Schedule": {
+      "className": "Schedule",
+      "sourcePath": "C:\\Users\\volle\\AppData\\Roaming\\npm\\node_modules\\winglang\\node_modules\\@winglang\\sdk\\lib\\target-sim\\schedule.inflight.js"
+    },
+    "@winglang/sdk.cloud.Secret": {
+      "className": "Secret",
+      "sourcePath": "C:\\Users\\volle\\AppData\\Roaming\\npm\\node_modules\\winglang\\node_modules\\@winglang\\sdk\\lib\\target-sim\\secret.inflight.js"
+    },
+    "@winglang/sdk.cloud.Service": {
+      "className": "Service",
+      "sourcePath": "C:\\Users\\volle\\AppData\\Roaming\\npm\\node_modules\\winglang\\node_modules\\@winglang\\sdk\\lib\\target-sim\\service.inflight.js"
+    },
+    "@winglang/sdk.sim.State": {
+      "className": "State",
+      "sourcePath": "C:\\Users\\volle\\AppData\\Roaming\\npm\\node_modules\\winglang\\node_modules\\@winglang\\sdk\\lib\\target-sim\\state.inflight.js"
+    },
+    "@winglang/sdk.ex.Table": {
+      "className": "Table",
+      "sourcePath": "C:\\Users\\volle\\AppData\\Roaming\\npm\\node_modules\\winglang\\node_modules\\@winglang\\sdk\\lib\\target-sim\\table.inflight.js"
+    },
+    "@winglang/sdk.std.TestRunner": {
+      "className": "TestRunner",
+      "sourcePath": "C:\\Users\\volle\\AppData\\Roaming\\npm\\node_modules\\winglang\\node_modules\\@winglang\\sdk\\lib\\target-sim\\test-runner.inflight.js"
+    },
+    "@winglang/sdk.cloud.Topic": {
+      "className": "Topic",
+      "sourcePath": "C:\\Users\\volle\\AppData\\Roaming\\npm\\node_modules\\winglang\\node_modules\\@winglang\\sdk\\lib\\target-sim\\topic.inflight.js"
+    },
+    "@winglang/sdk.cloud.Website": {
+      "className": "Website",
+      "sourcePath": "C:\\Users\\volle\\AppData\\Roaming\\npm\\node_modules\\winglang\\node_modules\\@winglang\\sdk\\lib\\target-sim\\website.inflight.js"
+    }
+  },
+  "resources": [
+    {
+      "type": "@winglang/sdk.std.TestRunner",
+      "path": "root/cloud.TestRunner",
+      "props": {
+        "tests": {}
+      },
+      "attrs": {}
+    },
+    {
+      "type": "@winglang/sdk.cloud.Website",
+      "path": "root/Default/cloud.Website",
+      "props": {
+        "staticFilesPath": "c:\\Users\\volle\\Documents\\bloggyfier\\front-end\\index.html",
+        "fileRoutes": {}
+      },
+      "attrs": {}
+    },
+    {
+      "type": "@winglang/sdk.cloud.Bucket",
+      "path": "root/Default/cloud.Bucket",
+      "props": {
+        "public": false,
+        "initialObjects": {},
+        "topics": {}
+      },
+      "attrs": {}
+    },
+    {
+      "type": "@winglang/sdk.cloud.Function",
+      "path": "root/Default/cloud.Api/OnRequestHandler-bf0e8f58",
+      "props": {
+        "sourceCodeFile": ".wing\\onrequesthandler-bf0e8f58_c84c0247.js",
+        "sourceCodeLanguage": "javascript",
+        "environmentVariables": {
+          "WING_TARGET": "sim",
+          "BUCKET_HANDLE_2cd0933d": "${root/Default/cloud.Bucket#attrs.handle}"
+        },
+        "timeout": 60000
+      },
+      "attrs": {}
+    },
+    {
+      "type": "@winglang/sdk.cloud.Api",
+      "path": "root/Default/cloud.Api",
+      "props": {
+        "openApiSpec": {
+          "openapi": "3.0.3",
+          "paths": {
+            "/files/{fileName}": {
+              "get": {
+                "operationId": "get-files/{fileName}",
+                "responses": {
+                  "200": {
+                    "description": "200 response",
+                    "content": {}
+                  }
+                },
+                "parameters": [
+                  {
+                    "name": "fileName",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                      "type": "string"
+                    }
+                  }
+                ]
+              },
+              "put": {
+                "operationId": "put-files/{fileName}",
+                "responses": {
+                  "200": {
+                    "description": "200 response",
+                    "content": {}
+                  }
+                },
+                "parameters": [
+                  {
+                    "name": "fileName",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "attrs": {}
+    },
+    {
+      "type": "@winglang/sdk.sim.EventMapping",
+      "path": "root/Default/cloud.Api/ApiEventMapping-bf0e8f58",
+      "props": {
+        "subscriber": "${root/Default/cloud.Api/OnRequestHandler-bf0e8f58#attrs.handle}",
+        "publisher": "${root/Default/cloud.Api#attrs.handle}",
+        "subscriptionProps": {
+          "routes": [
+            {
+              "path": "/files/{fileName}",
+              "method": "GET"
+            }
+          ]
+        }
+      },
+      "attrs": {}
+    },
+    {
+      "type": "@winglang/sdk.cloud.Function",
+      "path": "root/Default/cloud.Api/OnRequestHandler-15ce2678",
+      "props": {
+        "sourceCodeFile": ".wing\\onrequesthandler-15ce2678_c8f79806.js",
+        "sourceCodeLanguage": "javascript",
+        "environmentVariables": {
+          "WING_TARGET": "sim",
+          "BUCKET_HANDLE_2cd0933d": "${root/Default/cloud.Bucket#attrs.handle}"
+        },
+        "timeout": 60000
+      },
+      "attrs": {}
+    },
+    {
+      "type": "@winglang/sdk.sim.EventMapping",
+      "path": "root/Default/cloud.Api/ApiEventMapping-15ce2678",
+      "props": {
+        "subscriber": "${root/Default/cloud.Api/OnRequestHandler-15ce2678#attrs.handle}",
+        "publisher": "${root/Default/cloud.Api#attrs.handle}",
+        "subscriptionProps": {
+          "routes": [
+            {
+              "path": "/files/{fileName}",
+              "method": "PUT"
+            }
+          ]
+        }
+      },
+      "attrs": {}
+    }
+  ],
+  "sdkVersion": "0.41.29"
+}

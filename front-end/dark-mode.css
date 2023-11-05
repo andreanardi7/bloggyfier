@@ -64,3 +64,33 @@ button:hover {
 button:active {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
+
+/* Credits section styles */
+.credits {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.credits p {
+    margin: 5px 0;
+    font-size: 14px;
+
+}
+
+.credits a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+}

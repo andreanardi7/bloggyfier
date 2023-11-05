@@ -1,0 +1,144 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "root",
+    "path": "root",
+    "children": {
+      "cloud.TestRunner": {
+        "id": "cloud.TestRunner",
+        "path": "root/cloud.TestRunner",
+        "constructInfo": {
+          "fqn": "@winglang/sdk.std.TestRunner",
+          "version": "0.0.0"
+        },
+        "display": {
+          "title": "TestRunner",
+          "description": "A suite of APIs for running tests and collecting results.",
+          "hidden": true
+        }
+      },
+      "Default": {
+        "id": "Default",
+        "path": "root/Default",
+        "children": {
+          "cloud.Bucket": {
+            "id": "cloud.Bucket",
+            "path": "root/Default/cloud.Bucket",
+            "constructInfo": {
+              "fqn": "@winglang/sdk.cloud.Bucket",
+              "version": "0.0.0"
+            },
+            "display": {
+              "title": "Bucket",
+              "description": "A cloud object store"
+            }
+          },
+          "cloud.Website": {
+            "id": "cloud.Website",
+            "path": "root/Default/cloud.Website",
+            "constructInfo": {
+              "fqn": "@winglang/sdk.cloud.Website",
+              "version": "0.0.0"
+            },
+            "display": {
+              "title": "Website",
+              "description": "A static website"
+            }
+          },
+          "cloud.Api": {
+            "id": "cloud.Api",
+            "path": "root/Default/cloud.Api",
+            "children": {
+              "OnRequestHandler-bf0e8f58": {
+                "id": "OnRequestHandler-bf0e8f58",
+                "path": "root/Default/cloud.Api/OnRequestHandler-bf0e8f58",
+                "constructInfo": {
+                  "fqn": "@winglang/sdk.cloud.Function",
+                  "version": "0.0.0"
+                },
+                "display": {
+                  "title": "get()",
+                  "description": "A cloud function (FaaS)",
+                  "sourceModule": "@winglang/sdk"
+                }
+              },
+              "ApiEventMapping-bf0e8f58": {
+                "id": "ApiEventMapping-bf0e8f58",
+                "path": "root/Default/cloud.Api/ApiEventMapping-bf0e8f58",
+                "constructInfo": {
+                  "fqn": "@winglang/sdk.std.Resource",
+                  "version": "0.0.0"
+                },
+                "display": {
+                  "hidden": true
+                }
+              },
+              "OnRequestHandler-15ce2678": {
+                "id": "OnRequestHandler-15ce2678",
+                "path": "root/Default/cloud.Api/OnRequestHandler-15ce2678",
+                "constructInfo": {
+                  "fqn": "@winglang/sdk.cloud.Function",
+                  "version": "0.0.0"
+                },
+                "display": {
+                  "title": "put()",
+                  "description": "A cloud function (FaaS)",
+                  "sourceModule": "@winglang/sdk"
+                }
+              },
+              "ApiEventMapping-15ce2678": {
+                "id": "ApiEventMapping-15ce2678",
+                "path": "root/Default/cloud.Api/ApiEventMapping-15ce2678",
+                "constructInfo": {
+                  "fqn": "@winglang/sdk.std.Resource",
+                  "version": "0.0.0"
+                },
+                "display": {
+                  "hidden": true
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@winglang/sdk.cloud.Api",
+              "version": "0.0.0"
+            },
+            "display": {
+              "title": "Api",
+              "description": "A REST API endpoint"
+            }
+          },
+          "$Closure1": {
+            "id": "$Closure1",
+            "path": "root/Default/$Closure1",
+            "constructInfo": {
+              "fqn": "@winglang/sdk.std.Resource",
+              "version": "0.0.0"
+            },
+            "display": {
+              "hidden": true
+            }
+          },
+          "$Closure2": {
+            "id": "$Closure2",
+            "path": "root/Default/$Closure2",
+            "constructInfo": {
+              "fqn": "@winglang/sdk.std.Resource",
+              "version": "0.0.0"
+            },
+            "display": {
+              "hidden": true
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@winglang/sdk.std.Resource",
+          "version": "0.0.0"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "@winglang/sdk.core.App",
+      "version": "0.0.0"
+    }
+  }
+}

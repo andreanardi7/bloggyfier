@@ -1,12 +1,12 @@
 // Use API PUT to create a new file
 
-function generateSnippet(text) {
+function generateSnippet(content) {
 
   //Generate File Name
   let id = generateName();
 
   //Write File using API
-  let write = writeFile(id, text);
+  let write = writeFile(id, content);
 
   //Generate snippet
   var snippet =
@@ -14,12 +14,22 @@ function generateSnippet(text) {
     '<span id = ' + id + '>' +
     '</div>' +
     '<div>' +
-    '<script src="https://www.bloggyfier.com/index.js?id="' + id + '>' +
+    '<script src="https://www.bloggybase.com/reader.js?id="' + id + '>' +
     '</div>'
 
   return alert('Generated snippet:\n' + snippet);
 }
 
+// Parse the text to HTML
+function parser(output) {
+  const parser = new edjsParser();
+  return parser.parse(output);
+}
 
-
-// Use API GET to read the file from file name
+// Button click
+async function onCreateSnippetClick(editor) {
+  const content = await editor.save();
+  const parsedContent = parser(content)
+  console.log(parsedContent)
+  generateSnippet(parsedContent)
+}

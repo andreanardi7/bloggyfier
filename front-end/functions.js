@@ -1,4 +1,5 @@
-let fileName;
+import EditorJS from '@editorjs/editorjs'
+
 
 // Generatore Nome del file
 function generateName() {
@@ -11,26 +12,9 @@ function generateName() {
             const randomIndex = Math.floor(Math.random() * characters.length);
             alphanumericString += characters.charAt(randomIndex);
         }
-
-        // Generate a random alphanumeric string of a specific length
-        const length = 10;
-        const randomAlphanumericString = generateRandomAlphanumericString(length);
-        return ("blog_" + randomAlphanumericString + ".html");
     }
-}
-
-function writeFile(fileName, fileContent) {
-    //CALL WING API put
-
-    // Concat the generated code to the standard naming convention
-
-    //fileName.writeFile("blog_" + fileName + ".html"), fileContent, (err) => {
-    //if (err) throw err;
-    //};
-}
-
-function readFile(fileName) {
-    //CALL WING API get
-
-    //return fileContent;
+    // Generate a random alphanumeric string of a specific length
+    const length = 10;
+    const randomAlphanumericString = generateRandomAlphanumericString(length);
+    return (randomAlphanumericString);
 }
