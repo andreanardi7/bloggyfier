@@ -1,7 +1,7 @@
 let fileName;
 
 // Generatore Nome del file
-function generateFileName() {
+function generateName() {
     // Generate randdom string
     function generateRandomAlphanumericString(length) {
         const characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';

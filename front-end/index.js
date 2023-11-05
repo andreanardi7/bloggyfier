@@ -1,9 +1,9 @@
 // Use API PUT to create a new file
 
-function generateHTMLSnippet(text) {
+function generateSnippet(text) {
 
   //Generate File Name
-  let id = generateFileName();
+  let id = generateName();
 
   //Write File using API
   let write = writeFile(id, text);

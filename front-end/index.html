@@ -1,86 +1,172 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <script>
-        src = "./index.js"
-        defer
-    </script>
-
     <meta charset="UTF-8">
-    <title>Bloggyfier</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #333;
-            /* Dark background color */
-            color: #fff;
-            /* White text color */
-            margin: 0;
-            /* Remove default body margin */
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            /* Full viewport height */
-        }
-
-        h1 {
-            margin-bottom: 60px;
-            /* Add space below the title */
-        }
-
-        textarea {
-            width: 70%;
-            height: 70%;
-            padding: 10px;
-            background-color: #444;
-            /* Darker background color */
-            color: #fff;
-            /* White text color */
-            border: 1px solid #555;
-            /* Darker border color */
-            border-radius: 5px;
-            resize: vertical;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 10px;
-            /* Add space above the button */
-        }
-
-        button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            padding: 4px 8px;
-            /* Smaller padding for a smaller button */
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <h1>Bloggyfier</h1>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="light-mode.css" id="light-mode-styles">
+    <link rel="stylesheet" href="dark-mode.css" id="dark-mode-styles" disabled>
+    <!-- Dark mode styles (disabled by default) -->
 </head>
 
 <body>
-    <div class="container">
-        <h1>Bloggyfier</h1>
-        <textarea id="textArea" placeholder="Type your text here..."></textarea>
-        <div class="button-container">
-            <button onclick="generateHTMLSnippet(document.getElementById('textArea').value)">Create HTML
-                snippet</button>
+    <div class="ce-example__content _ce-example__content--small">
+
+        <button onclick="toggleDarkMode()">Change Mode</button>
+
+        <div class="button-container" id="generateButton">
+            <button onclick="generateSnippet(document.getElementById('text').value)">
+                Create HTML snippet
+            </button>
         </div>
+        <div id="editorjs"></div>
     </div>
+    <div class="ce-example__output">
+        <pre class="ce-example__output-content" id="output"></pre>
+    </div>
+    </div>
+
+    <!-- Load Tools -->
+    <!--
+   You can upload Tools to your project's directory and connect them by relative links.
+
+   Also you can load each Tool from CDN or use NPM/Yarn packages.
+
+   Read more at Tools Connection doc:
+   https://editorjs.io/getting-started#tools-connection
+   -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script><!-- Header -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/simple-image@latest"></script><!-- Image -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script><!-- Delimiter -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script><!-- List -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script><!-- Checklist -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script><!-- Quote -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script><!-- Code -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script><!-- Embed -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script><!-- Table -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script><!-- Link -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/warning@latest"></script><!-- Warning -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script><!-- Marker -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script><!-- Inline Code -->
+
+    <!-- Load Editor.js's Core -->
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+
+    <!-- Initialization -->
+    <script>
+        /**
+         * To initialize the Editor, create a new instance with configuration object
+         * @see docs/installation.md for mode details
+         */
+        var editor = new EditorJS({
+            /**
+             * Enable/Disable the read only mode
+             */
+
+            /**
+             * Wrapper of Editor
+             */
+            holder: 'editorjs',
+
+            /**
+             * Common Inline Toolbar settings
+             * - if true (or not specified), the order from 'tool' property will be used
+             * - if an array of tool names, this order will be used
+             */
+            // inlineToolbar: ['link', 'marker', 'bold', 'italic'],
+            // inlineToolbar: true,
+
+            /**
+             * Tools list
+             */
+            tools: {
+                /**
+                 * Each Tool is a Plugin. Pass them via 'class' option with necessary settings {@link docs/tools.md}
+                 */
+                header: {
+                    class: Header,
+                    inlineToolbar: ['marker', 'link'],
+                    config: {
+                        placeholder: 'Header'
+                    },
+                    shortcut: 'CMD+SHIFT+H'
+                },
+
+                /**
+                 * Or pass class directly without any configuration
+                 */
+                image: SimpleImage,
+
+                list: {
+                    class: List,
+                    inlineToolbar: true,
+                    shortcut: 'CMD+SHIFT+L'
+                },
+
+                checklist: {
+                    class: Checklist,
+                    inlineToolbar: true,
+                },
+
+                quote: {
+                    class: Quote,
+                    inlineToolbar: true,
+                    config: {
+                        quotePlaceholder: 'Enter a quote',
+                        captionPlaceholder: 'Quote\'s author',
+                    },
+                    shortcut: 'CMD+SHIFT+O'
+                },
+
+                warning: Warning,
+
+                marker: {
+                    class: Marker,
+                    shortcut: 'CMD+SHIFT+M'
+                },
+
+                code: {
+                    class: CodeTool,
+                    shortcut: 'CMD+SHIFT+C'
+                },
+
+                delimiter: Delimiter,
+
+                inlineCode: {
+                    class: InlineCode,
+                    shortcut: 'CMD+SHIFT+C'
+                },
+
+                linkTool: LinkTool,
+
+                embed: Embed,
+
+                table: {
+                    class: Table,
+                    inlineToolbar: true,
+                    shortcut: 'CMD+ALT+T'
+                },
+
+            },
+
+        });
+    </script>
+    <script>
+        const toggleDarkMode = () => {
+            const darkModeStyles = document.getElementById('dark-mode-styles');
+            const lightModeStyles = document.getElementById('light-mode-styles');
+
+            if (darkModeStyles.disabled) {
+                darkModeStyles.removeAttribute('disabled');
+                lightModeStyles.setAttribute('disabled', 'true');
+            } else {
+                darkModeStyles.setAttribute('disabled', 'true');
+                lightModeStyles.removeAttribute('disabled');
+            }
+        }
+    </script>
 </body>
 
 </html>
