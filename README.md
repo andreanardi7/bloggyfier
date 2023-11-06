@@ -37,4 +37,4 @@
         <p><a href="https://github.com/codex-team/editor.js">Editor.js</a> from Codex-Team</p>
         <p><a href="https://github.com/miadabdi/editorjs-parser">Editorjs parser</a> from miadabdi</p>
         <p><a href="https://www.wing.cloud/">Powered by WingCloud</a></p>
-<h2>This markdown file was created using bloggybase</h2><blockquote ><p>"True wisdom lies in solving problems before they arise."</p><cite>Me</cite></blockquote>
+<h2>Fun fact: This markdown file was created using bloggybase</h2><blockquote ><p>"True wisdom lies in solving problems before they arise."</p><cite>Me</cite></blockquote>
