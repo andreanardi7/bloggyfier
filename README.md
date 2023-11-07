@@ -17,11 +17,14 @@
   <mark class="cdx-marker">marked </mark>and more.<br />Everything its super
   intuitive and interactive.
 </p>
-<img src="/img/img/white-theme.png"> </img>
+
+<img src="/img/white-theme.png"> </img>
+
 <p class="paragraph">
   We also created a dark tone version for all the night owls out there that want
   to use it in the night:
 </p>
+
 <img src="/img/dark-theme.png" /> </img>
 
 <p class="paragraph"><br />And here is an example output :<br /></p>
