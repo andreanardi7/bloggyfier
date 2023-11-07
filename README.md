@@ -79,6 +79,15 @@
 </p>
 <p class="paragraph">conversion from plain text to HTML is facilitated by:</p>
 <h3>Contributors</h3>
+        <p>Created by:</p>
+        <p><a href="https://github.com/andreanardi7">Andrea Nardi</a></p>
+        <p><a href="https://www.linkedin.com/in/andrea-nardi-39418b1ab/">LinkedIn Profile</a></p>
+        <p><a href="https://github.com/fl0wo">Florian Sabani</a></p>
+        <p><a href="https://www.linkedin.com/in/florian-sabani/">LinkedIn Profile</a></p>
+        <p>Library Used:</p>
+        <p><a href="https://github.com/codex-team/editor.js">Editor.js</a> from Codex-Team</p>
+        <p><a href="https://github.com/miadabdi/editorjs-parser">Editorjs parser</a> from miadabdi</p>
+
 <h2>This markdown file was created using bloggybase</h2>
 <blockquote>
   <p>"True wisdom lies in solving problems before they arise."</p>
