@@ -3,19 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
+    <span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776</span>
     <h1>Bloggybase</h1>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Change mode (dark disabled by default) -->
     <link rel="stylesheet" href="../css/light-mode.css" id="light-mode-styles">
     <link rel="stylesheet" href="../css/dark-mode.css" id="dark-mode-styles" disabled>
-    <!-- Dark mode styles (disabled by default) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <script src="../index.js"></script>
 
 <body>
     <div class="ce-example__content _ce-example__content--small">
-
-        <button onclick="toggleDarkMode()">Change Mode</button>
-
         <div class="button-container" id="generateButton">
             <button onclick="onCreateSnippetClick(editor)">
                 Create snippet
@@ -41,6 +41,25 @@
         <p><a href="https://github.com/miadabdi/editorjs-parser">Editorjs parser</a> from miadabdi</p>
         <p><a href="https://www.wing.cloud/">Powered by WingCloud</a></p>
     </div>
+
+
+    <!-- SideNav -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">User info</a>
+        <a href="javascript:void(0)" class="changemode" onclick="toggleDarkMode()">Change Mode</a>
+        <a href="#">About us</a>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
 
 
     <!-- Load Tools -->

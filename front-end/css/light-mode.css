@@ -2,7 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: left;
-    background-color: #f0f0f0;
+    background-color: #f8f5f0;
     /* Pastel gray background color */
     color: #888;
     /* Light pastel text color */
@@ -30,7 +30,7 @@ h1 {
 /* Button container styles */
 .button-container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: right;
     margin-top: 10px;
 }
 
@@ -41,8 +41,8 @@ button {
     color: #fff;
     /* White text */
     border: none;
-    border-radius: 5px;
-    padding: 8px 15px;
+    border-radius: 10px;
+    padding: 12px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-weight: bold;
@@ -53,9 +53,6 @@ button:hover {
     /* Slightly darker pastel light blue on hover */
 }
 
-button:active {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
 
 /* Credits section styles */
 .credits {
@@ -64,7 +61,7 @@ button:active {
     left: 0;
     width: 100%;
     padding: 10px;
-    background-color: #f0f0f0;
+    background-color: #f8f5f0;
     border-radius: 5px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -76,11 +73,46 @@ button:active {
 }
 
 .credits a {
-    color: #007BFF;
+    color: #03858b;
     text-decoration: none;
     font-size: 14px;
 }
 
 .credits a:hover {
     text-decoration: underline;
+}
+
+/* Sidenav styles */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #9bc2c9;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #87aeb9;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
 }

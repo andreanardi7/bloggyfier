@@ -4,12 +4,11 @@ body {
     text-align: left;
     background-color: #333;
     /* Dark background color */
-    color: #fff;
-    /* White text color */
+    color: #ccc;
+    /* Light text color */
     margin: 0;
     padding: 0;
     font-size: 16px;
-    /* Adjust font size to your preference */
 }
 
 /* Main container styles */
@@ -17,52 +16,42 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Center content horizontally */
     justify-content: center;
-    /* Center content vertically */
     height: 100vh;
 }
 
 /* Title styles */
 h1 {
     margin-bottom: 40px;
-    /* Reduced spacing below the title */
     font-size: 40px;
-    text-align: center
-        /* Increased font size for the title */
+    text-align: center;
+    color: #fff;
 }
 
 /* Button container styles */
 .button-container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: right;
     margin-top: 10px;
-    /* Increased space above the button container */
 }
 
 /* Button styles */
 button {
-    background-color: #007bff;
+    background-color: #9bc2c9;
+    /* Slightly darker pastel light blue */
     color: #fff;
+    /* White text */
     border: none;
-    border-radius: 5px;
-    /* Slightly rounded corners */
-    padding: 8px 15px;
-    /* Increased padding for a larger button */
+    border-radius: 10px;
+    padding: 12px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    /* Smooth hover effect with ease-out timing */
     font-weight: bold;
-    /* Bold text for emphasis */
 }
 
 button:hover {
-    background-color: #0056b3;
-}
-
-/* Add a subtle box shadow to the button for depth */
-button:active {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    background-color: #87aeb9;
+    /* Slightly darker pastel light blue on hover */
 }
 
 /* Credits section styles */
@@ -75,22 +64,58 @@ button:active {
     background-color: #333;
     border-radius: 5px;
     text-align: center;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .credits p {
     margin: 5px 0;
     font-size: 14px;
-
+    color: #ccc;
 }
 
 .credits a {
-    color: #007bff;
+    color: #03858b;
     text-decoration: none;
     font-size: 14px;
 }
 
 .credits a:hover {
     text-decoration: underline;
+    color: #4eb9bf;
+}
+
+/* Sidenav styles */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #4eb9bf;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #fff;
 }
