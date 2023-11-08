@@ -1,4 +1,4 @@
-// Generatore Nome del file
+// Generator for File Name
 function generateName() {
     // Generate randdom string
     function generateRandomAlphanumericString(length) {
@@ -9,6 +9,7 @@ function generateName() {
             const randomIndex = Math.floor(Math.random() * characters.length);
             alphanumericString += characters.charAt(randomIndex);
         }
+        return alphanumericString;
     }
     // Generate a random alphanumeric string of a specific length
     const length = 10;

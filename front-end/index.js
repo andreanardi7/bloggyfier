@@ -14,10 +14,10 @@ function generateSnippet(content) {
     '<span id = ' + id + '>' +
     '</div>' +
     '<div>' +
-    '<script src="https://www.bloggybase.com/reader.js?id="' + id + '>' +
+    '<script src="https://www.bloggybase.com/reader.js?id="' + id + '" >' +
     '</div>'
 
-  return alert('Generated snippet:\n' + snippet);
+  return prompt('Generated snippet:\n', snippet);
 }
 
 // Parse the text to HTML
