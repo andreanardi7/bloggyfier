@@ -17,6 +17,7 @@
 <script src="../functions.js"></script>
 <script src="../wingApi.js"></script>
 
+
 <body>
     <div class="ce-example__content _ce-example__content--small">
         <div class="button-container" id="generateButton">
@@ -47,20 +48,20 @@
 
 
     <!-- SideNav -->
-    <div id="mySidenav" class="sidenav">
+    <div id="sideMenu" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#">User info</a>
-        <a href="javascript:void(0)" class="changemode" onclick="toggleDarkMode()">Change Mode</a>
+        <a href="javascript:void(0)" class="changemode" onclick="changeMode()">Change Mode</a>
         <a href="#">About us</a>
     </div>
 
     <script>
         function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("sideMenu").style.width = "250px";
         }
 
         function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("sideMenu").style.width = "0";
         }
     </script>
 
@@ -95,119 +96,8 @@
     <!-- Load Editor.js's Parser -->
     <script src="https://cdn.jsdelivr.net/npm/editorjs-parser@1/build/Parser.browser.min.js"></script>
 
-    <!-- Initialization -->
-    <script>
-        /**
-         * To initialize the Editor, create a new instance with configuration object
-         * @see docs/installation.md for mode details
-         */
-        var editor = new EditorJS({
-            /**
-             * Enable/Disable the read only mode
-             */
+    <script src="../editor.js"></script>
 
-            /**
-             * Wrapper of Editor
-             */
-            holder: 'editorjs',
-
-            /**
-             * Common Inline Toolbar settings
-             * - if true (or not specified), the order from 'tool' property will be used
-             * - if an array of tool names, this order will be used
-             */
-            // inlineToolbar: ['link', 'marker', 'bold', 'italic'],
-            // inlineToolbar: true,
-
-            /**
-             * Tools list
-             */
-            tools: {
-                /**
-                 * Each Tool is a Plugin. Pass them via 'class' option with necessary settings {@link docs/tools.md}
-                 */
-                header: {
-                    class: Header,
-                    inlineToolbar: ['marker', 'link'],
-                    config: {
-                        placeholder: 'Header'
-                    },
-                    shortcut: 'CMD+SHIFT+H'
-                },
-
-                /**
-                 * Or pass class directly without any configuration
-                 */
-                image: SimpleImage,
-
-                list: {
-                    class: List,
-                    inlineToolbar: true,
-                    shortcut: 'CMD+SHIFT+L'
-                },
-
-                checklist: {
-                    class: Checklist,
-                    inlineToolbar: true,
-                },
-
-                quote: {
-                    class: Quote,
-                    inlineToolbar: true,
-                    config: {
-                        quotePlaceholder: 'Enter a quote',
-                        captionPlaceholder: 'Quote\'s author',
-                    },
-                    shortcut: 'CMD+SHIFT+O'
-                },
-
-                warning: Warning,
-
-                marker: {
-                    class: Marker,
-                    shortcut: 'CMD+SHIFT+M'
-                },
-
-                code: {
-                    class: CodeTool,
-                    shortcut: 'CMD+SHIFT+C'
-                },
-
-                delimiter: Delimiter,
-
-                inlineCode: {
-                    class: InlineCode,
-                    shortcut: 'CMD+SHIFT+C'
-                },
-
-                linkTool: LinkTool,
-
-                embed: Embed,
-
-                table: {
-                    class: Table,
-                    inlineToolbar: true,
-                    shortcut: 'CMD+ALT+T'
-                },
-
-            },
-
-        });
-    </script>
-    <script>
-        const toggleDarkMode = () => {
-            const darkModeStyles = document.getElementById('dark-mode-styles');
-            const lightModeStyles = document.getElementById('light-mode-styles');
-
-            if (darkModeStyles.disabled) {
-                darkModeStyles.removeAttribute('disabled');
-                lightModeStyles.setAttribute('disabled', 'true');
-            } else {
-                darkModeStyles.setAttribute('disabled', 'true');
-                lightModeStyles.removeAttribute('disabled');
-            }
-        }
-    </script>
 </body>
 
 </html>
