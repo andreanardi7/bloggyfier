@@ -16,14 +16,13 @@
 <script src="../functions.js"></script>
 <script src="../functions.js"></script>
 <script src="../wingApi.js"></script>
+<script src="../css_controller.js"></script>
 
 
 <body>
     <div class="ce-example__content _ce-example__content--small">
         <div class="button-container" id="generateButton">
-            <button onclick="onCreateSnippetClick(editor)">
-                Create snippet
-            </button>
+            <button onclick="onCreateSnippetClick(editor)">Create snippet</button>
         </div>
         <div id="editorjs"></div>
     </div>
@@ -32,41 +31,47 @@
     </div>
     </div>
 
+    <!-- Side Menu -->
+    <div id="sideMenu" class="sidenav">
+        <a href="javascript:void(0)" class="closeNav" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)" class="changemode" onclick="showEdit()">Edit file</a>
+        <a href="javascript:void(0)" class="changemode" onclick="changeMode()">Change Mode</a>
+        <a href="javascript:void(0)" onclick="openCredits()">About us</a>
+    </div>
+
+    <!-- Edit a file -->
+    <div id="overlayEdit" class="overlayEdit">
+        <button class="closeEditButton" onclick="hideEdit()">&times;</button>
+        <textarea class="hiddenEdit" rows="4" cols="50"
+            placeholder='Name of the file (The name is the code you find after "id" in the snippet)'></textarea>
+        <button class="submitButton" onclick="editFile(document.getElementsByClassName(hiddenEdit).value)">Edit</button>
+    </div>
+
+
 
     <!-- Credits section -->
-    <div class="credits">
-        <p>Created by:</p>
-        <p><a href="https://github.com/andreanardi7">Andrea Nardi</a></p>
-        <p><a href="https://www.linkedin.com/in/andrea-nardi-39418b1ab/">LinkedIn Profile</a></p>
-        <p><a href="https://github.com/fl0wo">Florian Sabani</a></p>
-        <p><a href="https://www.linkedin.com/in/florian-sabani/">LinkedIn Profile</a></p>
-        <p>Library Used:</p>
-        <p><a href="https://github.com/codex-team/editor.js">Editor.js</a> from Codex-Team</p>
-        <p><a href="https://github.com/miadabdi/editorjs-parser">Editorjs parser</a> from miadabdi</p>
-        <p><a href="https://www.wing.cloud/">Powered by WingCloud</a></p>
+    <div id="overlayCredits" class="overlayCredits">
+        <div class="credits" class="credits">
+            <button class="closeCreditsBtn" onclick="closeCredits()">&times;</button>
+            <p>Created by:</p>
+            <p><a href="https://github.com/andreanardi7">Andrea Nardi</a></p>
+            <p><a href="https://www.linkedin.com/in/andrea-nardi-39418b1ab/">LinkedIn Profile</a></p>
+            <p><a href="https://github.com/fl0wo">Florian Sabani</a></p>
+            <p><a href="https://www.linkedin.com/in/florian-sabani/">LinkedIn Profile</a></p>
+            <p>Library Used:</p>
+            <p><a href="https://github.com/codex-team/editor.js">Editor.js</a> from Codex-Team</p>
+            <p><a href="https://github.com/miadabdi/editorjs-parser">Editorjs parser</a> from miadabdi</p>
+            <p><a href="https://www.wing.cloud/">Powered by WingCloud</a></p>
+        </div>
     </div>
 
 
-    <!-- SideNav -->
-    <div id="sideMenu" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">User info</a>
-        <a href="javascript:void(0)" class="changemode" onclick="changeMode()">Change Mode</a>
-        <a href="#">About us</a>
-    </div>
-
-    <script>
-        function openNav() {
-            document.getElementById("sideMenu").style.width = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("sideMenu").style.width = "0";
-        }
-    </script>
 
 
-    <!-- Load Tools -->
+
+
+
+    <!-- Load EditorJS Tools -->
     <!--
    You can upload Tools to your project's directory and connect them by relative links.
 
@@ -96,7 +101,7 @@
     <!-- Load Editor.js's Parser -->
     <script src="https://cdn.jsdelivr.net/npm/editorjs-parser@1/build/Parser.browser.min.js"></script>
 
-    <script src="../editor.js"></script>
+    <script src="../editorJs_config.js"></script>
 
 </body>
 

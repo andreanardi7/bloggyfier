@@ -11,14 +11,6 @@ body {
     font-size: 16px;
 }
 
-/* Main container styles */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
 
 /* Title styles */
 h1 {
@@ -54,33 +46,7 @@ button:hover {
 }
 
 
-/* Credits section styles */
-.credits {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    background-color: #f8f5f0;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
 
-.credits p {
-    margin: 5px 0;
-    font-size: 14px;
-}
-
-.credits a {
-    color: #03858b;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.credits a:hover {
-    text-decoration: underline;
-}
 
 /* Sidenav styles */
 .sidenav {
@@ -109,10 +75,127 @@ button:hover {
     color: #87aeb9;
 }
 
-.sidenav .closebtn {
+.sidenav .closeNav {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+}
+
+
+
+
+/* Credits section styles */
+.credits {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #f8f5f0;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.credits p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.credits a {
+    color: #ff8b94;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+    color: #ffc3ca;
+}
+
+
+/* Credits that open only when it's pressed the button on the sideNav */
+.closeCreditsBtn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #ff8b94;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 40px;
+}
+
+.overlayCredits {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.credits-container {
+    position: absolute;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+/* Hidden button and Text Area to select which file to edit*/
+.overlayEdit {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+
+.hiddenEdit {
+    position: absolute;
+    top: 300px;
+    left: 500px;
+    text-align: left;
+    width: 900px;
+    height: 25px;
+    margin: auto;
+    /* Center the textarea horizontally */
+    resize: none;
+    font-size: 20px;
+}
+
+.submitButton {
+    position: absolute;
+    top: 295px;
+    left: 1430px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+
+}
+
+.closeEditButton {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #ff8b94;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 40px;
 }

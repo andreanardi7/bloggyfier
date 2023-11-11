@@ -1,35 +1,15 @@
-// Use API PUT to create a new file
+// Use API GET to read the file from file name
+const queryString = window.location.search;
+const onlyLettersPattern = /^[A-Za-z]+$/;
+const validTags = ["html", "txt"];
 
-function generateSnippet(content) {
+// Printing even if not accepted just for testing reasons
+console.log(queryString);
 
-  //Generate File Name
-  let id = generateName();
-
-  //Write File using API
-  let write = writeFile(id, content);
-
-  //Generate snippet
-  var snippet =
-    '<div>' +
-    '<span id = ' + id + '>' +
-    '</div>' +
-    '<div>' +
-    '<script src="https://www.bloggybase.com/reader.js?id="' + id + '" >' +
-    '</div>'
-
-  return prompt('Generated snippet:\n', snippet);
-}
-
-// Parse the text to HTML
-function parser(output) {
-  const parser = new edjsParser();
-  return parser.parse(output);
-}
-
-// Button click
-async function onCreateSnippetClick(editor) {
-  const content = await editor.save();
-  const parsedContent = parser(content)
-  console.log(parsedContent)
-  generateSnippet(parsedContent)
+if (validTags.includes(userQuery)) {
+  // Useing a filter to remove bad characters that coul cause an SQL Injection
+  if (queryString.match(onlyLettersPattern)) {
+    const urlParams = new URLSearchParams(queryString);
+    readFile(queryString);
+  }
 }
