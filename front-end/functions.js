@@ -60,6 +60,8 @@ async function onCreateSnippetClick(editor) {
 // Read a stored file
 function editFile(fileName) {
     // Call readFile and add ".txt" to retrive the plain text fail (optimal for edits)
-    document.getElementById(editor).innerHTML = readFile(fileName + ".txt")
+    let content = readFile(fileName + ".txt")
+    console.log(content)
+    document.getElementById(editor).innerHTML = content
     hideEdit()
 }

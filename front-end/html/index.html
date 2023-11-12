@@ -14,7 +14,6 @@
 
 <script src="../index.js"></script>
 <script src="../functions.js"></script>
-<script src="../functions.js"></script>
 <script src="../wingApi.js"></script>
 <script src="../css_controller.js"></script>
 
@@ -42,9 +41,9 @@
     <!-- Edit a file -->
     <div id="overlayEdit" class="overlayEdit">
         <button class="closeEditButton" onclick="hideEdit()">&times;</button>
-        <textarea class="hiddenEdit" rows="4" cols="50"
+        <textarea id="hiddenEdit" rows="4" cols="50"
             placeholder='Name of the file (The name is the code you find after "id" in the snippet)'></textarea>
-        <button class="submitButton" onclick="editFile(document.getElementsByClassName(hiddenEdit).value)">Edit</button>
+        <button class="submitButton" onclick='editFile(document.getElementById("hiddenEdit").value)''>Edit</button>
     </div>
 
 
@@ -73,35 +72,31 @@
 
     <!-- Load EditorJS Tools -->
     <!--
-   You can upload Tools to your project's directory and connect them by relative links.
+   You can upload Tools to your project' s directory and connect them by relative links. Also you can load each Tool
+            from CDN or use NPM/Yarn packages. Read more at Tools Connection doc:
+            https://editorjs.io/getting-started#tools-connection -->
+            <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script><!-- Header -->
+            <script src="https://cdn.jsdelivr.net/npm/@editorjs/simple-image@latest"></script><!-- Image -->
+            <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script><!-- Delimiter -->
+            <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script><!-- List -->
+            <script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script><!-- Checklist -->
+            <script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script><!-- Quote -->
+            <script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script><!-- Code -->
+            <script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script><!-- Embed -->
+            <script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script><!-- Table -->
+            <script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script><!-- Link -->
+            <script src="https://cdn.jsdelivr.net/npm/@editorjs/warning@latest"></script><!-- Warning -->
 
-   Also you can load each Tool from CDN or use NPM/Yarn packages.
+            <script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script><!-- Marker -->
+            <script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script><!-- Inline Code -->
 
-   Read more at Tools Connection doc:
-   https://editorjs.io/getting-started#tools-connection
-   -->
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script><!-- Header -->
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/simple-image@latest"></script><!-- Image -->
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script><!-- Delimiter -->
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script><!-- List -->
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script><!-- Checklist -->
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script><!-- Quote -->
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script><!-- Code -->
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script><!-- Embed -->
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script><!-- Table -->
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script><!-- Link -->
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/warning@latest"></script><!-- Warning -->
+            <!-- Load Editor.js's Core -->
+            <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script><!-- Marker -->
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script><!-- Inline Code -->
+            <!-- Load Editor.js's Parser -->
+            <script src="https://cdn.jsdelivr.net/npm/editorjs-parser@1/build/Parser.browser.min.js"></script>
 
-    <!-- Load Editor.js's Core -->
-    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
-
-    <!-- Load Editor.js's Parser -->
-    <script src="https://cdn.jsdelivr.net/npm/editorjs-parser@1/build/Parser.browser.min.js"></script>
-
-    <script src="../editorJs_config.js"></script>
+            <script src="../editorJs_config.js"></script>
 
 </body>
 
