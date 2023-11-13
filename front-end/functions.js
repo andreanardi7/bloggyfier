@@ -55,7 +55,7 @@ function parser(content) {
 }
 
 // Snippet Create button click handler
-async function onCreateSnippetClick(editor, fileName) {
+async function onClickCreateSnippet(editor, fileName) {
     const content = await editor.save();
     const parsedContent = parser(content)
     console.log(parsedContent)
@@ -66,9 +66,12 @@ async function onCreateSnippetClick(editor, fileName) {
 
 // !!!!!!!!NEED TESTS AFTER AWS DEPLOY
 // Read a stored file
-function editFile(fileName) {
+async function onClickEditFile(fileName) {
     // Call readFile and add ".txt" to retrive the plain text fail (optimal for edits)
-    let content = readFile(fileName + ".txt")
-    console.log(content)
-    document.getElementById(editor).innerHTML = content
+    const response = await fetch(readFile(fileName + ".txt"));
+    let JsonContent = await response.json();
+    let parsedContent = parser(JsonContent)
+
+    console.log(parsedContent)
+    document.getElementById(editor).innerHTML = parsedContent.content
 }

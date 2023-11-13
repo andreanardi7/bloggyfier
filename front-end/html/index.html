@@ -23,7 +23,7 @@
 <body>
     <div class="ce-example__content _ce-example__content--small">
         <div class="button-container" id="generateButton">
-            <button onclick="onCreateSnippetClick(editor, fileName)">Create snippet</button>
+            <button onclick="onClickCreateSnippet(editor, fileName)">Create snippet</button>
         </div>
         <div id="editorjs"></div>
     </div>
@@ -45,7 +45,7 @@
         <button class="closeEditButton" onclick="hideEdit()">&times;</button>
         <textarea id="hiddenEdit" rows="4" cols="50"
             placeholder='Name of the file (The name is the code you find after "id" in the snippet)'></textarea>
-        <button class="submitButton" onclick='editFile(document.getElementById("hiddenEdit").value); 
+        <button class="submitButton" onclick='onClickEditFile(document.getElementById("hiddenEdit").value); 
             fileName = document.getElementById("hiddenEdit").value'>Edit</button>
     </div>
 

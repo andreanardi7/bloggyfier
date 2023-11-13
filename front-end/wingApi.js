@@ -31,9 +31,9 @@ function readFile(fileName) {
         redirect: 'follow'
     };
     // Manually update port every time (changes at every save)
-    fetch("http://127.0.0.1:54099/files/" + fileName, requestOptions)
+    var JsonResponse = fetch("http://127.0.0.1:54099/files/" + fileName, requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
-    //return fileContent;
+    return JsonResponse;
 }
