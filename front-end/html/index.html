@@ -23,7 +23,7 @@
 <body>
     <div class="ce-example__content _ce-example__content--small">
         <div class="button-container" id="generateButton">
-            <button onclick="onClickCreateSnippet(editor, fileName)">Create snippet</button>
+            <button id="submit" onclick="onClickCreateSnippet(editor, fileName)">Create snippet</button>
         </div>
         <div id="editorjs"></div>
     </div>
@@ -45,8 +45,12 @@
         <button class="closeEditButton" onclick="hideEdit()">&times;</button>
         <textarea id="hiddenEdit" rows="4" cols="50"
             placeholder='Name of the file (The name is the code you find after "id" in the snippet)'></textarea>
-        <button class="submitButton" onclick='onClickEditFile(document.getElementById("hiddenEdit").value); 
-            fileName = document.getElementById("hiddenEdit").value'>Edit</button>
+        <button class="openEditButton" onclick=
+            'onClickEditFile(document.getElementById("hiddenEdit").value); 
+            fileName = document.getElementById("hiddenEdit").value;
+            document.getElementById("submit").innerHTML = "Submit Changes"'>
+            >Edit</button>
+        <button id="hiddenButton">Hidden Button</button>
     </div>
 
 
@@ -78,6 +82,7 @@
    You can upload Tools to your project' s directory and connect them by relative links. Also you can load each Tool
             from CDN or use NPM/Yarn packages. Read more at Tools Connection doc:
             https://editorjs.io/getting-started#tools-connection -->
+
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script><!-- Header -->
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/simple-image@latest"></script><!-- Image -->
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script><!-- Delimiter -->

@@ -70,8 +70,8 @@ async function onClickEditFile(fileName) {
     // Call readFile and add ".txt" to retrive the plain text fail (optimal for edits)
     const response = await fetch(readFile(fileName + ".txt"));
     let JsonContent = await response.json();
-    let parsedContent = parser(JsonContent)
+    let parsedContent = parse(JsonContent)
 
-    console.log(parsedContent)
+    console.log(parsedContent.content)
     document.getElementById(editor).innerHTML = parsedContent.content
 }
