@@ -41,12 +41,12 @@ api.put("/files/{fileName}", inflight (req: cloud.ApiRequest): cloud.ApiResponse
 
   // Parse body type str? and need str (use ?? to define the fallback)
   let parsedBody = Json.parse(body??"{}");
-  let content = parsedBody.get("content").asStr();
-  let plainText = parsedBody.get("text").asStr();
+  let HtmlFile = parsedBody.get("HtmlFile").asStr();
+  let MarkdownFile = parsedBody.get("MarkdownFile").asStr();
   let items = bucket.list();
 
-    bucket.put(fileName+ ".html",content);
-    bucket.put(fileName+ ".txt",plainText);
+    bucket.put(fileName+ ".html",HtmlFile);
+    bucket.put(fileName+ ".txt",MarkdownFile);
 
     return cloud.ApiResponse {     
       status: 201,

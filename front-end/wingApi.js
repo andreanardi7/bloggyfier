@@ -1,12 +1,13 @@
 // Call WING APIs
 
 // CALL WING API put to write a new file on the bucket
-function writeFile(fileName, fileContent) {
+function writeFile(fileName, parsedContent, plainContent ) {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
     var raw = JSON.stringify({
-        "content": fileContent
+        "HtmlFile": parsedContent,
+        "MarkdownFile": plainContent
     });
 
     var requestOptions = {

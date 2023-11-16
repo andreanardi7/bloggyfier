@@ -26,15 +26,15 @@ function generateName() {
 
 
 // Use API PUT to create a new file
-function generateSnippet(content, id) {
+function generateSnippet(id, parsedContent, plainContent) {
     // Check if you have edited a file or it's brand new
     if (id == "") {
         //Generate File Name
         let id = generateName();
     }
 
-    //Write File using API
-    let write = writeFile(id, content);
+    //Write File using APIF
+    let write = writeFile(id, parsedContent, plainContent);
 
     //Generate snippet
     var snippet =
@@ -56,10 +56,10 @@ function parser(content) {
 
 // Snippet Create button click handler
 async function onClickCreateSnippet(editor, fileName) {
-    const content = await editor.save();
-    const parsedContent = parser(content)
+    const plainContent = await editor.save();
+    const parsedContent = parser(plainContent)
     console.log(parsedContent)
-    generateSnippet(parsedContent, fileName)
+    generateSnippet(fileName, parsedContent, plainContent)
 }
 
 
