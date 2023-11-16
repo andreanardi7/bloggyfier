@@ -1,4 +1,4 @@
-// Call WING APIs
+// -------------------Call WING APIs-------------------
 
 // CALL WING API put to write a new file on the bucket
 function writeFile(fileName, parsedContent, plainContent ) {

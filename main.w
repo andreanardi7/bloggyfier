@@ -10,7 +10,7 @@ let api = new cloud.Api();
 
 
 
-// Read the file with GET reqtest
+// -------------------Read the file with GET reqest-------------------
 //  Create an endpoint for HTTP GET requests
 api.get("/files/{fileName}", inflight (req: cloud.ApiRequest): cloud.ApiResponse => {
   let fileName = req.vars.get("fileName");
@@ -33,7 +33,7 @@ api.get("/files/{fileName}", inflight (req: cloud.ApiRequest): cloud.ApiResponse
 });
 
 
-
+// -------------------Write a file with PUT reqest-------------------
 //  Create an endpoint for HTTP put requests
 api.put("/files/{fileName}", inflight (req: cloud.ApiRequest): cloud.ApiResponse => { 
   let fileName = req.vars.get("fileName");

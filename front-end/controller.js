@@ -1,3 +1,28 @@
+// -------------------onClick controller-------------------
+// Snippet Create button click handler
+async function onClickCreateSnippet(editor, fileName) {
+    const plainContent = await editor.save();
+    const parsedContent = parser(plainContent)
+    console.log(parsedContent)
+    generateSnippet(fileName, parsedContent, plainContent)
+}
+
+
+
+// !!!!!!!!!!!!!!!!NEED TESTS AFTER AWS DEPLOY!!!!!!!!!!!!!!!!
+// Read a stored file
+async function onClickEditFile(fileName) {
+    // Call readFile and add ".txt" to retrive the plain text fail (optimal for edits)
+    const response = await fetch(readFile(fileName + ".txt"));
+    let JsonContent = await response.json();
+    let parsedContent = parse(JsonContent)
+
+    console.log(parsedContent.content)
+    document.getElementById(editor).innerHTML = parsedContent.content
+}
+
+
+// -------------------CSS controller functions-------------------
 // Change Theme
 function changeMode() {
     const darkModeStyles = document.getElementById('dark-mode-styles');
