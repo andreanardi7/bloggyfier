@@ -62,14 +62,11 @@
   introduce new features, including:<br />
 </p>
 <ol>
-  <li>The ability to edit existing HTML files.</li>
+  <li>The ability to edit existing HTML files. (Needs further testing but is 
+    almost fully implemented)</li>
   <li>
     The inclusion of a login form to enhance the management of your code
     snippets.
-  </li>
-  <li>
-    A landing page where you can find clear explanations and options to either
-    log in, create new content, or edit existing files.
   </li>
 </ol>
 <br />
@@ -77,7 +74,6 @@
   The highly interactive features are powered by the JavaScript library
   Editor.js
 </p>
-<p class="paragraph">conversion from plain text to HTML is facilitated by:</p>
 <h3>Contributors</h3>
         <p>Created by:</p>
         <p><a href="https://github.com/andreanardi7">Andrea Nardi</a></p>
@@ -86,7 +82,6 @@
         <p><a href="https://www.linkedin.com/in/florian-sabani/">LinkedIn Profile</a></p>
         <p>Library Used:</p>
         <p><a href="https://github.com/codex-team/editor.js">Editor.js</a> from Codex-Team</p>
-        <p><a href="https://github.com/miadabdi/editorjs-parser">Editorjs parser</a> from miadabdi</p>
 
 <h2>This markdown file was created using bloggybase</h2>
 <blockquote>
