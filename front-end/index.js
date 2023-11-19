@@ -1,7 +1,7 @@
 // Use API GET to read the file from file name
 const queryString = window.location.search;
 const onlyLettersPattern = /^[A-Za-z]+$/;
-const validTags = ["html", "txt"];
+const validTags = ["html", "txt", "md"];
 
 // Printing even if not accepted just for testing reasons
 console.log(queryString);

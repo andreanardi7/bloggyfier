@@ -17,9 +17,9 @@ function generateName() {
     let randomAlphanumericString = generateRandomAlphanumericString(length);
 
     // Check if the generated fileName already exists
-    if (readFile(fileName + ".txt") != "") {
-        generateName();
-    }
+    //if (readFile(randomAlphanumericString + ".txt") != "") {
+    //    generateName();
+    //}
 
     return (randomAlphanumericString);
 }

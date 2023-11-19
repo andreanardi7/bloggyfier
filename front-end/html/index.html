@@ -12,10 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<script src="../index.js"></script>
 <script src="../functions.js"></script>
 <script src="../wingApi.js"></script>
-<script src="../css_controller.js"></script>
+<script src="../controller.js"></script>
 
 <!-- File Name has a value only if i'm editing an old file -->
 <script> var fileName = "" </script>
@@ -45,12 +44,10 @@
         <button class="closeEditButton" onclick="hideEdit()">&times;</button>
         <textarea id="hiddenEdit" rows="4" cols="50"
             placeholder='Name of the file (The name is the code you find after "id" in the snippet)'></textarea>
-        <button class="openEditButton" onclick=
-            'onClickEditFile(document.getElementById("hiddenEdit").value); 
+        <button class="openEditButton" onclick='onClickEditFile(document.getElementById("hiddenEdit").value); 
             fileName = document.getElementById("hiddenEdit").value;
             document.getElementById("submit").innerHTML = "Submit Changes"'>
-            >Edit</button>
-        <button id="hiddenButton">Hidden Button</button>
+            Edit</button>
     </div>
 
 

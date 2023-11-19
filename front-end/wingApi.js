@@ -1,7 +1,7 @@
 // -------------------Call WING APIs-------------------
 
 // CALL WING API put to write a new file on the bucket
-function writeFile(fileName, parsedContent, plainContent ) {
+function writeFile(fileName, parsedContent, plainContent) {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -17,7 +17,7 @@ function writeFile(fileName, parsedContent, plainContent ) {
         redirect: 'follow'
     };
     // Manually update port every time (changes at every save)
-    fetch("http://127.0.0.1:54099/files/" + fileName, requestOptions)
+    fetch("http://127.0.0.1:54851/files/" + fileName, requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
@@ -32,9 +32,17 @@ function readFile(fileName) {
         redirect: 'follow'
     };
     // Manually update port every time (changes at every save)
-    var JsonResponse = fetch("http://127.0.0.1:54099/files/" + fileName, requestOptions)
+    var JsonResponse = fetch("http://127.0.0.1:54851/files/" + fileName, requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
-    return JsonResponse;
+
+    // Check if the call is asking for the HTML or the plaintext
+    if (fileName.endsWith('.txt') || fileName.endsWith('.md')) {
+        parsed = JsonResponse.MarkdownFile
+    }
+    else {
+        parsed = JsonResponse.HtmlFile
+    }
+    return parsed;
 }
