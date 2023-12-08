@@ -16,10 +16,22 @@ function generateName() {
     const length = 10;
     let randomAlphanumericString = generateRandomAlphanumericString(length);
 
+    let nameAlreadyExists ="";
+
+
     // Check if the generated fileName already exists
-    //if (readFile(randomAlphanumericString + ".txt") != "") {
-    //    generateName();
-    //}
+    nameAlreadyExists = readFile(randomAlphanumericString + ".txt")
+    .then(data => {
+      console.log('Data received:', data);
+      if (nameAlreadyExists != "") {
+        generateName();
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+      // Handle the error
+      console.log('No file exist with that name')
+    });
 
     return (randomAlphanumericString);
 }
